@@ -201,20 +201,17 @@ nav ul{
 
 .portfolio {
  display:grid;
- grid-template-columns: repeat(3,1fr);
+ grid-template-columns: repeat(2,1fr);
  gap:20px;
  max-width: 1220px;
  margin:0 auto;
- justify-content:center;
+
 }
 
 .column {
-	flex-wrap: wrap;
-    width:calc(33.33%-20px);
     margin:10px;
 	padding: 20px;
 	border: 1px solid #ddd;
-	text-align: center;
 }
 
 .column img {
@@ -240,4 +237,25 @@ nav ul{
 	color: #fff;
 	text-decoration: none;
 	border-radius: 4px;
+}
+
+
+/*scroll up*/
+
+#scrollToTopBtn {
+    display: none;
+    font-size: 25px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
 }
