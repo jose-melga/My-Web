@@ -25,3 +25,17 @@ function scrollToTop() {
         window.scrollTo(0, currentScroll - currentScroll / 8);
     }
 }
+
+/********************************************************************************************************** */
+
+//fOOTER
+// Get year
+const currentYear = new Date().getFullYear();
+
+// Add year
+document.getElementById('currentYear').textContent = currentYear;
+  
+  
+  
+  
+  
