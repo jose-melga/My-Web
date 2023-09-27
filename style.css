@@ -307,7 +307,7 @@ nav ul{
 }
 
 #scrollToTopBtn:hover {
-    background-color: #0056b3;
+    background-color: var(--second-color)
 }
 
 
