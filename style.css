@@ -1,6 +1,6 @@
 :root {
-	--main-color: brown;
-	--second-color:#555555;
+	--main-color: #20262e;
+	--second-color:#48bf53;
 	
   }
   
@@ -38,7 +38,8 @@ body {
     padding-bottom:0px;
     margin:0px;
     overflow-x: hidden;
-	background: linear-gradient(to bottom, #292929 0%, #404040 100%);
+	background: var(--main-color);
+	
 }
 
 a,
@@ -141,6 +142,12 @@ nav ul{
 	text-align: center;
 }
 
+.name-bio h2 {
+	margin-bottom:-10px;
+}
+
+
+
 .title-bio {
 	padding: 30px 30px 10px 30px;
 }
@@ -149,25 +156,33 @@ nav ul{
 	text-align: center;
 }
 
+
+
 .prin-description {
 	display: flex;
 	width: 100%;
 }
 
 .social-links {
-	font-size: 18px;
+	font-size: 20px;
 	text-align: center;
 	padding-bottom: 10px;
 }
 
+
+.social-links i {
+    margin-right: 10px; /* Ajusta el valor según la cantidad de espacio deseada */
+}
+
+
 .links {
+	/*border-top: 1px solid #000;*/
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-
-	height: 70px;
-	background-color: red;
+	height: 50px;
+	
 }
 
 .link-download {
@@ -175,7 +190,24 @@ nav ul{
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	position:relative;
+	
 }
+
+
+.link-download::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 1px;
+	background-color: #000; 
+
+  }
+
+
+  
 
 /* FILTER CSS GALLERY*/
 
@@ -251,8 +283,8 @@ nav ul{
 	display: inline-block;
 	margin-top: 10px;
 	padding: 8px 20px;
-	background-color: #007bff;
 	color: #fff;
+	background: var(--second-color);
 	text-decoration: none;
 	border-radius: 4px;
 }
@@ -280,17 +312,6 @@ nav ul{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*Contact Form*/
 
 .contact-block{
@@ -303,7 +324,7 @@ nav ul{
 	padding:20px;
 	width:90%;
 	text-align: center;
-	background:red;
+	background: white;
 	margin:auto;
 
 }
@@ -349,7 +370,7 @@ textarea{
 }
 
 button[type="submit"] {
-	background-color: #007bff;
+	background-color: var(--second-color);
 	color: #fff;
 	padding: 10px 20px;
 	border: none;

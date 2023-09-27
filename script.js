@@ -38,4 +38,36 @@ document.getElementById('currentYear').textContent = currentYear;
   
   
   
-  
+/* Form *********************************/
+
+document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("formID");
+    var successMessage = document.querySelector(".success-messages");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json",
+            },
+        })
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(function (data) {
+            form.style.display = "none";
+            successMessage.style.display = "block";
+        })
+        .catch(function (error) {
+            console.error("There was a problem with the fetch operation:", error);
+        });
+    });
+});
