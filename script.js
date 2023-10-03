@@ -36,38 +36,34 @@ const currentYear = new Date().getFullYear();
 document.getElementById('currentYear').textContent = currentYear;
   
   
-  
-  
-/* Form *********************************/
+/**********VIEW MORE BUTTON**************** */
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
-    var form = document.getElementById("formID");
-    var successMessage = document.querySelector(".success-messages");
+    const divs = document.querySelectorAll(".column");
+    const button = document.getElementById("more-button");
+    const divsPerPage = 2; // show 2 divs
+    let divsToShow = 0;
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        var formData = new FormData(form);
-
-        fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: {
-                Accept: "application/json",
-            },
-        })
-        .then(function (response) {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
+    function showDivs(start, end) {
+        for (let i = 0; i < divs.length; i++) {
+            if (i >= start && i < end) {
+                divs[i].style.display = "block";
+            } else {
+                divs[i].style.display = "none";
             }
-            return response.json();
-        })
-        .then(function (data) {
-            form.style.display = "none";
-            successMessage.style.display = "block";
-        })
-        .catch(function (error) {
-            console.error("There was a problem with the fetch operation:", error);
-        });
-    });
+        }
+    }
+
+    function loadMoreDivs() {
+        divsToShow += divsPerPage;
+        showDivs(0, divsToShow);
+        if (divsToShow >= divs.length) {
+            button.style.display = "none"; // hide when no more divs
+        }
+    }
+
+    button.addEventListener("click", loadMoreDivs);
+    loadMoreDivs(); // add 2 at beginner
 });

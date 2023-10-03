@@ -59,7 +59,6 @@ h5 {
 .container1 {
 	max-width: 1256px;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	width: 100%;
 	box-sizing: border-box;
@@ -79,12 +78,14 @@ header {
 }
 
 .princ-content {
+	
+	
+	width:auto;
+	background-color: white;
 	max-width: calc(60% - 72px);
 }
 
-.second-bio {
-	background-color: white;
-}
+
 
 img {
 	width: 100%;
@@ -104,32 +105,25 @@ nav {
 	padding: 10px 0px;
 	background-color: white;
 }
-/*
-nav ul{
-    width:
-}
-*/
+
+
 .body-bio {
 	display: flex;
 	padding: 0 0 30px 0;
 }
 
 .column-1 {
-	padding-top : 0px !important;
-	padding: 30px;
+	padding: 0px 30px 30px 30px;
 	width: 80%;
 }
 
 .prin-bio {
-	background-image: url("img/jose-melga.webp");
-	background-size: 100% auto;
+	
 	background-repeat: no-repeat;
 	background-position: top;
 	z-index: 99;
 	margin-top: -20px;
 	margin-left: 5px;
-	flex-grow: 1;
-	max-width: calc(40% - 72px);
 	background-color: white;
 	border-radius: 4px;
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, 1);
@@ -137,10 +131,12 @@ nav ul{
 }
 
 .name-bio {
-	max-height:310px ;
-	padding-top: 70%;
+	margin:auto;
 	text-align: center;
+	min-width:500px;
 }
+
+
 
 .name-bio h2 {
 	margin-bottom:-10px;
@@ -149,7 +145,7 @@ nav ul{
 
 
 .title-bio {
-	padding: 30px 30px 10px 30px;
+	padding: 30px 30px 0px 30px;
 }
 
 .subtitle-bio {
@@ -157,12 +153,12 @@ nav ul{
 }
 
 
-
+/*
 .prin-description {
 	display: flex;
 	width: 100%;
 }
-
+*/
 .social-links {
 	font-size: 20px;
 	text-align: center;
@@ -224,9 +220,20 @@ nav ul{
 
 
 .button-container2 {
+	display:flex;
 	text-align: center;
 
 }
+
+
+
+.button-portfolio {
+	padding:40px 0px 40px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 
 .filter-button {
 	padding: 10px 20px;
@@ -255,6 +262,12 @@ nav ul{
  padding-right:20px;
 
 }
+
+
+#more-button{
+	cursor:pointer;
+}
+
 
 .column {
     margin:10px;
@@ -287,6 +300,13 @@ nav ul{
 	background: var(--second-color);
 	text-decoration: none;
 	border-radius: 4px;
+	border:1px solid var(--second-color);
+}
+
+.button:hover{
+	color:var(--second-color);
+	background: white;
+	border:1px solid var(--second-color);
 }
 
 
@@ -379,6 +399,7 @@ button[type="submit"] {
 	font-size: 18px;
 	cursor: pointer;
 	float:right;
+	border:1px solid var(--second-color);
 }
 
 
@@ -428,10 +449,11 @@ button[type="submit"] {
   }
 
   .title-portfolio h2{
+	font-size: 30px;
 	text-align: center;
 	color:white;
 	padding-top:50px ;
-	padding-bottom:50px ;
+	padding-bottom:20px ;
   }
 
 
@@ -463,31 +485,60 @@ footer p {
 
 
 
-  /*WIDTHS***********************************************/
+  /*WIDTHS*****************************************************************************************/
   @media (max-width: 768px){
-	.name-bio{
-		padding-top: 70%;
+
+	header{
+		max-width: 500px;
+		width:100%;
+		display:block;
+		margin:0 auto;
+		height:auto;
+	}
+
+	ul{
+		display: flex;
 		
 	}
 
+	li {
+		display: inline-block;
+		margin:auto;
+	}
+
+	nav{
+		padding:2px 0px;
+		margin-bottom:12px;
+	}
+
+
+	.prin-bio{
+		margin:0 auto;
+		max-width:1000px;
+	}
 
 	.princ-content{
 		flex-grow: 1;
 		max-width:590px;
-		margin-left: -3px;
-		margin-right: -3px;
-		margin-top:-30px;
+		margin:20px auto 20px auto;
 
 
 	}
 
 	.prin-bio{
+		padding-top:20px;
 		flex-grow: 1;
 		max-width:500px;
 		
+		
+	}
+
+	.name-bio{
+		min-width:unset;
 	}
 
 	.container1{
+		display: block;
 		padding-left:20px ;
 		padding-right:20px ;
 		
@@ -501,6 +552,10 @@ footer p {
 	   
 	   }
   }
+
+  .form-contact {
+	width:75%;
+}
 
 
   /*WIDTHS***********************************************/
